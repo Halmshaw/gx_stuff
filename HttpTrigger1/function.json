@@ -17,9 +17,11 @@
       "name": "$return"
     },
     {
-      "type": "http",
+      "type": "queue",
       "direction": "out",
-      "name": "one"
-    }
+      "name": "msg",
+      "queueName": "outqueue",
+      "connection": "MyStorageConnection"
+  }
   ]
 }
