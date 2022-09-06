@@ -27,39 +27,27 @@ def main(req: func.HttpRequest, msg: func.Out[func.QueueMessage]) -> str:
     #         datetime.date(d.year + d.month//12, d.month % 12 + 1, 1) -
     #         datetime.timedelta(days=1)
     #     )
-
+           
     current_date = datetime.date.today()
     first_day_of_month = datetime.date(current_date.year, current_date.month, 1)
     last_day_of_month = datetime.date(current_date.year, current_date.month, calendar.monthrange(current_date.year, current_date.month)[1])
  
-    print(first_day_of_month)
-    print(last_day_of_month)
+    strFirst = first_day_of_month.strftime("%d/%m/%Y")
+    strLast = last_day_of_month.strftime("%d/%m/%Y")
+    value =  {
+        "firstDateOfMonth": strFirst,
+        "lastDateOfMonth": strLast
+    }
+
+
+
+
+    print(json.dumps(value)) 
+
+    # print(first_day_of_month)
+    # print(last_day_of_month)
     
-    return func.HttpResponse(f" This is the first day of the month  {first_day_of_month} and this is the last day of the month {last_day_of_month}")
+    return func.HttpResponse( json.dumps(value))
         #msg.set(name)
     
 
-
-
-
-# def names():
-#     value = {
-#         "first name": "Luc",
-#         "last name": "Halmshaw", :  [
-#           {  
-          
-
-#                 "first name" : "Charles"
-#            },    "last name" :  "Perkins"
-#             {
-#                 "first name" : "Dave"
-#                 "last name" : "Patterson"
-
-#             }
-#         ]
-#     }   
-
-
-#     return json.dumps(value)
-
-# print(names())
