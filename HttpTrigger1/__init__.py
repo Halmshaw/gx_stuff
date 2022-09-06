@@ -22,8 +22,6 @@ def main(req: func.HttpRequest, msg: func.Out[func.QueueMessage]) -> str:
     
     print(todayDate.replace(day=1))
 
-
-    
     if name:
         return func.HttpResponse(f"Hello, {name}. This HTTP triggered function executed successfully.")
         #msg.set(name)
