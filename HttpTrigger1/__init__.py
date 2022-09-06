@@ -1,6 +1,7 @@
 import datetime 
 import calendar
 import logging
+import json
 import azure.functions as func
 
 
@@ -34,5 +35,31 @@ def main(req: func.HttpRequest, msg: func.Out[func.QueueMessage]) -> str:
     print(first_day_of_month)
     print(last_day_of_month)
     
-    return func.HttpResponse(f"Hello, {name}. This HTTP triggered function executed successfully"{first_day_of_month, last_day_of_month})
+    return func.HttpResponse(f" This is the first day of the month  {first_day_of_month} and this is the last day of the month {last_day_of_month}")
         #msg.set(name)
+    
+
+
+
+
+# def names():
+#     value = {
+#         "first name": "Luc",
+#         "last name": "Halmshaw", :  [
+#           {  
+          
+
+#                 "first name" : "Charles"
+#            },    "last name" :  "Perkins"
+#             {
+#                 "first name" : "Dave"
+#                 "last name" : "Patterson"
+
+#             }
+#         ]
+#     }   
+
+
+#     return json.dumps(value)
+
+# print(names())
