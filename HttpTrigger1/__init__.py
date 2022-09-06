@@ -21,6 +21,16 @@ def main(req: func.HttpRequest, msg: func.Out[func.QueueMessage]) -> str:
     
     print(todayDate.replace(day=1))
 
+    >>> import calendar
+    >>> calendar.monthrange(2002, 1)
+    (1, 31)
+    >>> calendar.monthrange(2008, 2)  # leap years are handled correctly
+    (4, 29)
+    >>> calendar.monthrange(2100, 2)  # years divisible by 100 but not 400 aren't leap years
+    (0, 28)
+
+
+    
     if name:
         return func.HttpResponse(f"Hello, {name}. This HTTP triggered function executed successfully.")
         #msg.set(name)
