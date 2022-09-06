@@ -33,12 +33,6 @@ def main(req: func.HttpRequest, msg: func.Out[func.QueueMessage]) -> str:
  
     print(first_day_of_month)
     print(last_day_of_month)
-
-        return func.HttpResponse(f"Hello, {name}. This HTTP triggered function executed successfully.{first_day_of_month, last_day_of_month}")
+    
+    return func.HttpResponse(f"Hello, {name}. This HTTP triggered function executed successfully{first_day_of_month, last_day_of_month}")
         #msg.set(name)
-
-    else:
-        return func.HttpResponse(
-             "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response.",
-             status_code=200
-        )
